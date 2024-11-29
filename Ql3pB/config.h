@@ -3,7 +3,6 @@
   See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
 */
 
-#define ORYX_CONFIGURATOR
 #define RETRO_TAPPING
 
 #define COMBO_TERM 100
@@ -13,9 +12,7 @@
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
 #define CAPS_LOCK_STATUS
-#define FIRMWARE_VERSION u8"Ql3pB/elB07"
-#define RAW_USAGE_PAGE 0xFF60
-#define RAW_USAGE_ID 0x61
+#define SERIAL_NUMBER "Ql3pB/0gg56"
 #define LAYER_STATE_16BIT
 
 #define TAPPING_TERM_PER_KEY
