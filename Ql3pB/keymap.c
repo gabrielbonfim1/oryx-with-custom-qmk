@@ -56,6 +56,27 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+// Custom QMK Functions By @gabrielbonfim1
+
+// Function to set the first row of moonlander to red
+void color_first_row_to_red(void){
+    int first_row[] = {0,5,10,15,20,25,29,36,41,46,51,56,61,65}; // Leds for the first row of moonlander, ommited 25 e 29 because I don't use those keys.
+    for (int i = 0; i < 14; i++){
+            rgb_matrix_set_color(first_row[i], 0xFF, 0x00, 0x00);
+    }
+}
+
+bool caps_lock_status = false; // Variable to track if caps lock is turned on
+
+// Update the caps lock status
+bool led_update_user(led_t led_state){
+	caps_lock = led_state.caps_lock;
+	// if (caps_lock && IS_LAYER_ON(0)){
+	// 	color_first_row_to_red();
+	// }
+	return true;
+}
+
 extern rgb_config_t rgb_matrix_config;
 
 void keyboard_post_init_user(void) {
@@ -114,6 +135,11 @@ bool rgb_matrix_indicators_user(void) {
       rgb_matrix_set_color_all(0, 0, 0);
     break;
   }
+
+  // Custom Part to Change RGB color on caps_lock
+	if (caps_lock && biton32(layer_state) == 0){
+		color_first_row_to_red();
+	}
   return true;
 }
 
