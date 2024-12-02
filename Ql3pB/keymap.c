@@ -66,11 +66,11 @@ void color_first_row_to_red(void){
     }
 }
 
-bool caps_lock_status = false; // Variable to track if caps lock is turned on
+bool caps_lock_on = false; // Variable to track if caps lock is turned on
 
 // Update the caps lock status
 bool led_update_user(led_t led_state){
-	caps_lock = led_state.caps_lock;
+	caps_lock_on = led_state.caps_lock;
 	// if (caps_lock && IS_LAYER_ON(0)){
 	// 	color_first_row_to_red();
 	// }
@@ -137,7 +137,7 @@ bool rgb_matrix_indicators_user(void) {
   }
 
   // Custom Part to Change RGB color on caps_lock
-	if (caps_lock && biton32(layer_state) == 0){
+	if (caps_lock_on && biton32(layer_state) == 0){
 		color_first_row_to_red();
 	}
   return true;
