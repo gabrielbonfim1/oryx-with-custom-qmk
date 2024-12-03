@@ -60,7 +60,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 // Function to set the first row of moonlander to red
 void color_first_row_to_red(void){
-    int first_row[] = {0,5,10,15,20,25,41,46,51,56,61,65}; // Leds for the first row of moonlander, ommited 29 e 36 because I don't use those keys.
+    int first_row[] = {0,5,10,15,20,25,36,41,46,51,56,61}; // Leds for the first row of moonlander, ommited 29 e 65 because I don't use those keys.
     for (int i = 0; i < 12; i++){
             rgb_matrix_set_color(first_row[i], 0xFF, 0x00, 0x00);
     }
