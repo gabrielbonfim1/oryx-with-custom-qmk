@@ -8,6 +8,17 @@ enum custom_keycodes {
   ST_MACRO_0,
 };
 
+uint16_t returnCommand(){
+  os_variant_t OS; 
+  OS = detected_host_os()
+  switch (OS){
+    case OS_MACOS:
+      return KC_LCMD;
+    case OS_WINDOWS:
+      return KC_LCTL;
+  }
+}
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
@@ -44,16 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
-uint16_t returnCommand(){
-  os_variant_t OS; 
-  OS = detected_host_os()
-  switch (OS){
-    case OS_MACOS:
-      return KC_LCMD;
-    case OS_WINDOWS:
-      return KC_LCTL;
-  }
-}
+
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
