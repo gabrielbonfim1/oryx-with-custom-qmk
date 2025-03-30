@@ -10,7 +10,7 @@ enum custom_keycodes {
 
 uint16_t returnCommand(){
   os_variant_t OS; 
-  OS = detected_host_os()
+  OS = detected_host_os();
   switch (OS){
     case OS_MACOS:
       return KC_LCMD;
