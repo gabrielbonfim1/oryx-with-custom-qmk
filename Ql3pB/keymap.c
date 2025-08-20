@@ -50,6 +50,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
+layer_state_t layer_state_set_user(layer_state_t state){
+  return state;
+}
+
 
 const uint16_t PROGMEM combo0[] = { KC_LEFT_SHIFT, KC_LEFT, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_LEFT_SHIFT, KC_RIGHT, COMBO_END};
@@ -138,7 +142,20 @@ bool rgb_matrix_indicators_user(void) {
       rgb_matrix_set_color_all(0, 0, 0);
     }
   }
-
+  if (host_keyboard_led_state().caps_lock){
+    rgb_matrix_set_color(0,255,0,0);
+    rgb_matrix_set_color(5,255,0,0);
+    rgb_matrix_set_color(10,255,0,0);
+    rgb_matrix_set_color(15,255,0,0);
+    rgb_matrix_set_color(20,255,0,0);
+    rgb_matrix_set_color(25,255,0,0);
+    rgb_matrix_set_color(36,255,0,0);
+    rgb_matrix_set_color(41,255,0,0);
+    rgb_matrix_set_color(46,255,0,0);
+    rgb_matrix_set_color(51,255,0,0);
+    rgb_matrix_set_color(56,255,0,0);
+    rgb_matrix_set_color(61,255,0,0);
+  } 
   return true;
 }
 
