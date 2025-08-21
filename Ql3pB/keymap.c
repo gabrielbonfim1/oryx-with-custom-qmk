@@ -33,8 +33,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_moonlander(
     KC_TRANSPARENT, LALT(KC_1),     LALT(KC_2),     LALT(KC_3),     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_ASTR,        KC_TRANSPARENT, KC_MINUS,       KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_EXLM,        KC_AT,          KC_HASH,        KC_CIRC,        KC_DLR,         KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_PLUS,        KC_LPRN,        KC_RPRN,        KC_MINUS,       KC_UNDS,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_SCLN,        KC_PIPE,        KC_AMPR,        KC_GRAVE,       KC_PERC,        KC_TRANSPARENT,                                                                 KC_COLN,        KC_EQUAL,       KC_LBRC,        KC_RBRC,        KC_DQUO,        KC_QUOTE,       KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TILD,                                        KC_LCBR,        KC_RCBR,        KC_MINUS,       KC_RABK,        KC_BSLS,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_SCLN,        KC_PIPE,        KC_AMPR,        KC_GRAVE,       KC_PERC,        KC_TRANSPARENT,                                                                 KC_COLN,        KC_EQUAL,       KC_LBRC,        KC_RBRC,        KC_DQUO,        KC_TILD,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TILD,                                        KC_LCBR,        KC_RCBR,        KC_TILD,        KC_RABK,        KC_BSLS,        KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, LCTL(KC_F13),   LCTL(KC_LBRC),  LCTL(KC_BSLS),  LCTL(KC_SLASH), LCTL(KC_RBRC),  
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                 KC_TRANSPARENT, ST_MACRO_0,     KC_TRANSPARENT
   ),
