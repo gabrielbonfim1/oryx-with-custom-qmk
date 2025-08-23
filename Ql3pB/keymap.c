@@ -57,11 +57,18 @@ layer_state_t layer_state_set_user(layer_state_t state){
 }
 
 
+const uint16_t PROGMEM combo0[] = { KC_LEFT_GUI, KC_ESCAPE, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+    COMBO(combo0, LGUI(KC_SPACE)),
+};
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(2, KC_F):
             return TAPPING_TERM -20;
+        case TD(DANCE_0):
+            return TAPPING_TERM + 150;
         case LT(2, KC_J):
             return TAPPING_TERM -20;
         default:
@@ -206,7 +213,6 @@ void dance_0_finished(tap_dance_state_t *state, void *user_data) {
     dance_state[0].step = dance_step(state);
     switch (dance_state[0].step) {
         case SINGLE_TAP: register_code16(KC_LEFT_SHIFT); break;
-        case SINGLE_HOLD: register_code16(KC_LEFT_SHIFT); break;
         case DOUBLE_TAP: register_code16(KC_CAPS); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_LEFT_SHIFT); register_code16(KC_LEFT_SHIFT);
     }
@@ -216,7 +222,6 @@ void dance_0_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state[0].step) {
         case SINGLE_TAP: unregister_code16(KC_LEFT_SHIFT); break;
-        case SINGLE_HOLD: unregister_code16(KC_LEFT_SHIFT); break;
         case DOUBLE_TAP: unregister_code16(KC_CAPS); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_LEFT_SHIFT); break;
     }
